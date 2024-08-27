@@ -1,6 +1,6 @@
 import { Box, Stack, Typography } from '@mui/material'
 import React from 'react'
-import NamePic from '../Pics/Name.png'
+import NamePic from '../Pics/Logo/Name.png'
 import { Cat_Data } from '../Components/Data'
 import CarouselComponent from '../Components/Carousel.jsx'
 const Dashboard = () => {
