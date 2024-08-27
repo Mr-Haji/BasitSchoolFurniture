@@ -25,13 +25,6 @@ const About = () => {
   return (
     <Stack
       className='body'
-      sx={{
-        height: '100vh',
-        width: '100%',
-        justifyContent: 'center',
-        alignItems: 'center',
-        boxSizing: 'border-box',
-      }}
     >
       <Stack
         sx={{
@@ -39,12 +32,13 @@ const About = () => {
           borderRadius: '30px',
           width: '95vw',
           border: '1px solid #000',
-          height: '100vh',
+          minHeight: '95vh',
           flexDirection: { sm: 'column', md: 'row' },
           justifyContent: 'space-around',
           alignItems: 'center',
           gap: 5,
           px: 5,
+          pb: { xs: 12, md: 0, sm: 0 }
         }}
       >
         <Stack

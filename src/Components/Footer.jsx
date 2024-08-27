@@ -8,25 +8,17 @@ export default function Footer() {
     return (
         <Stack
             sx={{
-                width: '100%',        // Ensure it takes up the full width
-                position: 'fixed',     // Fixes the footer to the bottom
-                bottom: 15,             // Aligns it to the bottom
-                flexDirection: {sm:'column',sm:'row'},  // Aligns the icons in a row
-                justifyContent: {sm:'center',sm:'space-between'} , // Center the icons horizontally
-                alignItems: 'center',  // Vertically center the icons
-                px: 8,
+                width: '100%',
+                position: 'fixed',
+                bottom: 15,
+                flexDirection: { xs: "column", sm: 'column', md: 'row' },
+                justifyContent: { xs: 'center', sm: 'center', md: 'space-between' },
+                alignItems: 'center',
+                px: { xs: 4, md: 8 },
+                py: { xs: 2, md: 0 }
 
             }}
         >
-            <Stack sx={{
-                      color:"#287759"
-            }}>
-
-                <p>
-                    © 2017 Zunn Designs. All Rights Reserved.
-                </p>
-
-            </Stack>
             <Stack
                 direction="row"
                 spacing={2} // Space between icons
@@ -72,6 +64,16 @@ export default function Footer() {
                     <WhatsApp />
                 </IconButton>
             </Stack>
+            <Stack sx={{
+                color: "#287759"
+            }}>
+
+                <p>
+                    © 2017 Zunn Designs. All Rights Reserved.
+                </p>
+
+            </Stack>
+
 
         </Stack>
     );

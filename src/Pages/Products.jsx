@@ -1,11 +1,12 @@
-import { Grid, Stack } from '@mui/material';
+import { Grid, Stack, Typography } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import ProductCard from '../Components/ProductCard';
 import { Cat_Data, Product_Data } from '../Components/Data.js';
 import { useLocation, useNavigate } from 'react-router-dom';
+import Dropdown from '../Components/Dropdown.jsx';
 
 const Products = () => {
-  const [ProductData, setProductData] = useState(Product_Data); // Initialize with an empty array
+
   const [filteredProductData, setFilteredProductData] = useState([]); // Store filtered data
   const { state } = useLocation(); // Get state passed from the previous page
   const navigate = useNavigate();
@@ -22,15 +23,15 @@ const Products = () => {
   // Function to filter products based on state.id
   const filterProducts = () => {
     const StdId = state?.id || ''; // Ensure state.id is accessible
-    console.log('Current Id:', StdId);
+    // console.log('Current Id:', StdId);
 
     if (StdId) {
-      const filteredData = ProductData.filter((product) =>
+      const filteredData = Product_Data.filter((product) =>
         product.code.toLowerCase().includes(StdId.toLowerCase())
       );
       setFilteredProductData(filteredData); // Set filtered data
     } else {
-      setFilteredProductData(ProductData); // Reset to original data if no search
+      setFilteredProductData(Product_Data); // Reset to original data if no search
     }
   };
 
@@ -46,11 +47,11 @@ const Products = () => {
     <Stack
       className="body"
       sx={{
-        height: '100vh', // Full viewport height
-        width: '100%', // Full width
-        justifyContent: 'center', // Center vertically
-        alignItems: 'center', // Center horizontally
-        boxSizing: 'border-box', // Ensure padding and borders are considered
+        height: '100vh',
+        width: '100%',
+        justifyContent: 'center',
+        alignItems: 'center',
+        boxSizing: 'border-box',
       }}
     >
       <Stack
@@ -61,56 +62,56 @@ const Products = () => {
           border: '1px solid #000',
           height: '95vh',
           flexDirection: 'row',
-          overflow: 'hidden', // Prevent overflow
+          overflow: 'hidden',
         }}
       >
         {/* Sidebar or Filter */}
-       <Stack
-      sx={{
-        width: '25%', // Adjust width to fit the remaining space
-        py: 5,
-        px: 2,
-        overflow: 'auto', // Changed from 'scroll' to 'auto' for better UX
-        display: { xs: 'none', md: 'flex' }, // Display 'none' on extra-small screens, 'flex' on medium and larger screens
-      // flexDirection:{xs:'row',md:'column'}
-      }}
-    >
-        <Grid container spacing={3} gap={2}>
-          {Cat_Data.map((e, i) => (
-            <Grid item md={5} key={i}>
-              <ProductCard
-                ProductClick={() => {
-                  navigateToNextPage('/products', { id: e.code });
-                }}
-                ProductImage={e.image}
-                ProductName={e.name}
-              />
-            </Grid>
-          ))}
-        </Grid>
-      </Stack>
-
-      {/* Main Content */}
-      <Stack
-        sx={{
-          width: '75%', // Adjust width to fit the remaining space
-          p: 5,
-          overflow: 'scroll',
-        }}
-      >
-        <Grid container spacing={5}>
-          {filteredProductData.length > 0 ? (
-            filteredProductData.map((e, i) => (
-              <Grid item xs={12} sm={6} md={2} key={i} sx={{ display: 'flex' }}>
-                <ProductCard ProductImage={e.image} ProductName={e.name} ProductCTA={'Order Now'} />
+        <Stack
+          sx={{
+            minWidth: '25%',
+            overflow: 'auto',
+            p: 2,
+            display: { xs: 'none', md: 'flex' },
+          }}
+        >
+          <Typography sx={{ fontSize: '18px', textAlign: 'center', fontWeight: 'bold', mb: 2 }}>Categories</Typography>
+          <Grid container spacing={1} >
+            {Cat_Data.map((e, i) => (
+              <Grid item md={6} key={i}>
+                <ProductCard
+                  ProductClick={() => {
+                    navigateToNextPage('/products', { id: e.code });
+                  }}
+                  ProductImage={e.image}
+                  ProductName={e.name}
+                />
               </Grid>
-            ))
-          ) : (
-            <p>Loading</p>
-          )}
-        </Grid>
+            ))}
+          </Grid>
+        </Stack>
+        {/* Main Content */}
+
+        <Stack
+          sx={{
+            minWidth: '75%',
+            p: 5,
+            overflow: 'scroll',
+          }}
+        >
+          <Dropdown />
+          <Grid container spacing={5}>
+            {filteredProductData.length > 0 ? (
+              filteredProductData.map((e, i) => (
+                <Grid item xs={12} sm={6} md={2} key={i} sx={{ display: 'flex' }}>
+                  <ProductCard ProductImage={e.image} ProductName={e.name} ProductCTA={'Order Now'} />
+                </Grid>
+              ))
+            ) : (
+              <p>Loading</p>
+            )}
+          </Grid>
+        </Stack>
       </Stack>
-    </Stack>
     </Stack >
   );
 };

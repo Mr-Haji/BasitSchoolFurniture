@@ -1,7 +1,7 @@
 import { IconButton, Stack, Typography } from '@mui/material'
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import D1 from '../Pics/1.jpg'
+import D1 from '../Pics/2.jpg'
 import { Cat_Data } from './Data'
 const ProductCard = ({ ProductImage, ProductName, ProductClick, ProductCTA }) => {
     const navigate = useNavigate()
@@ -10,16 +10,16 @@ const ProductCard = ({ ProductImage, ProductName, ProductClick, ProductCTA }) =>
 
 
     return (
-        <Stack onClick={ProductClick}>
+        <Stack sx={{ justifyContent: 'center', alignItems: 'center', width: '100%', }} onClick={ProductClick}>
 
 
             <Typography sx={{
-                width: { md: '140px' },
-                minheight: { md: '180px' },
+                minWidth: { xs: '250px', md: '140px' },
+              minHeight: { md: '180px' },
                 border: '2px solid #287759',
                 borderRadius: '30px',
                 textAlign: 'center',
-                p:1,
+                p: 1,
                 ":hover": {
                     transform: "scale3d(1.05, 1.05, 1)",
                     boxShadow: '1px 1px 5px #287759'
@@ -29,7 +29,7 @@ const ProductCard = ({ ProductImage, ProductName, ProductClick, ProductCTA }) =>
             }}>
                 <IconButton>
                     <img src={ProductImage}
-                        style={{ width: '100px' }}
+                        style={{ width: '100%',height:'120px' }}
                     />
                 </IconButton>
 
