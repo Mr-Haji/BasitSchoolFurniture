@@ -1,7 +1,6 @@
 import { Box, Stack, Typography } from '@mui/material'
 import React from 'react'
-// import NamePic from '../Pics/Logo/Name.png'
-import NamePic from '../Pics/Products/OF1.jpg'
+import NamePic from '../Pics/Name.png'
 import { Cat_Data } from '../Components/Data'
 import CarouselComponent from '../Components/Carousel.jsx'
 const Dashboard = () => {
@@ -19,12 +18,12 @@ const Dashboard = () => {
       }} >
 
         {/* Upper Half */}
-        <Stack sx={{ minHeight: { xs: '100%', md: '60%' }, gap: 5, justifyContent: 'space-around' }} >
+        <Stack sx={{ minHeight: { xs: '100%', md: '60%' }, justifyContent: 'space-around' }} >
 
           <Stack sx={{
             justifyContent: 'center',
             alignItems: 'center',
-            mt: 10
+            mt: 5
           }}>
             <Box
               component="img"
@@ -32,9 +31,15 @@ const Dashboard = () => {
                 width: {
                   xs: '300px', // small screens
                   sm: '450px', // medium screens
-                  md: '550px', // large screens
+                  md: '400px', // large screens
                 },
-                height: 'auto', // maintain aspect ratio
+
+                height: {
+                  xs: '300px', // small screens
+                  sm: '450px', // medium screens
+                  md: '200px', // large screens
+                },
+
               }}
               src={NamePic}
             />
@@ -51,7 +56,7 @@ const Dashboard = () => {
             <Typography sx={{
               fontSize: '20px'
             }}>
-              At Basit Furniture, we craft exceptional, high-quality furniture designed to elevate every space.<span style={{ color: '#287759', fontWeight: 'bold', fontSize: '23px', fontStyle: 'italic' }}>
+              <span style={{ color: '#287759', fontWeight: 'bold', fontSize: '23px', fontStyle: 'italic' }}>  At Al-Basit Furniture,</span> we craft exceptional, high-quality furniture designed to elevate every space.<span style={{ color: '#287759', fontWeight: 'bold', fontSize: '23px', fontStyle: 'italic' }}>
                 With decades of expertise in furniture manufacturing</span>, we specialize in creating innovative, durable, and stylish pieces that reflect the latest
               <span style={{ color: '#287759', fontWeight: 'bold', fontSize: '23px', fontStyle: 'italic' }}>
 

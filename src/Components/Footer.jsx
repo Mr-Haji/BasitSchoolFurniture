@@ -69,7 +69,7 @@ export default function Footer() {
             }}>
 
                 <p>
-                    © 2017 Zunn Designs. All Rights Reserved.
+                    © 2024 Tech Masters Official. All Rights Reserved.
                 </p>
 
             </Stack>

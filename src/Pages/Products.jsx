@@ -1,4 +1,4 @@
-import { Grid, Stack, Typography } from '@mui/material';
+import { Grid, Skeleton, Stack, Typography } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import ProductCard from '../Components/ProductCard';
 import { Cat_Data, Product_Data } from '../Components/Data.js';
@@ -106,9 +106,100 @@ const Products = () => {
                   <ProductCard ProductImage={e.image} ProductName={e.name} ProductCTA={'Order Now'} />
                 </Grid>
               ))
-            ) : (
-              <p>Loading</p>
-            )}
+            ) : (<>
+              <Stack sx={{ flexDirection: 'column', mt: 5, ml: 5, justifyContent: 'center', alignItems: 'center', gap: 1, border: '2px solid rgb(195 188 182)', borderRadius: '30px', p: 1 }}>
+
+                <Skeleton variant="rectangular"
+                  sx={{
+                    borderRadius: '30px',
+                    width: { xs: 250, md: 150 },
+                    height: { md: 130, xs: 250, },
+                  }} />
+                <Skeleton variant="rounded"
+                  sx={{
+                    borderRadius: '30px',
+                    width: { xs: 250, md: 150 },
+                    height: { md: 30, xs: 50, },
+                  }} />
+              </Stack>
+              <Stack sx={{ flexDirection: 'column', mt: 5, ml: 5, justifyContent: 'center', alignItems: 'center', gap: 1, border: '2px solid rgb(195 188 182)', borderRadius: '30px', p: 1 }}>
+
+                <Skeleton variant="rectangular"
+                  sx={{
+                    borderRadius: '30px',
+                    width: { xs: 250, md: 150 },
+                    height: { md: 130, xs: 250, },
+                  }} />
+                <Skeleton variant="rounded"
+                  sx={{
+                    borderRadius: '30px',
+                    width: { xs: 250, md: 150 },
+                    height: { md: 30, xs: 50, },
+                  }} />
+              </Stack>
+              <Stack sx={{ flexDirection: 'column', mt: 5, ml: 5, justifyContent: 'center', alignItems: 'center', gap: 1, border: '2px solid rgb(195 188 182)', borderRadius: '30px', p: 1 }}>
+
+                <Skeleton variant="rectangular"
+                  sx={{
+                    borderRadius: '30px',
+                    width: { xs: 250, md: 150 },
+                    height: { md: 130, xs: 250, },
+                  }} />
+                <Skeleton variant="rounded"
+                  sx={{
+                    borderRadius: '30px',
+                    width: { xs: 250, md: 150 },
+                    height: { md: 30, xs: 50, },
+                  }} />
+              </Stack>
+              <Stack sx={{ flexDirection: 'column', mt: 5, ml: 5, justifyContent: 'center', alignItems: 'center', gap: 1, border: '2px solid rgb(195 188 182)', borderRadius: '30px', p: 1 }}>
+
+                <Skeleton variant="rectangular"
+                  sx={{
+                    borderRadius: '30px',
+                    width: { xs: 250, md: 150 },
+                    height: { md: 130, xs: 250, },
+                  }} />
+                <Skeleton variant="rounded"
+                  sx={{
+                    borderRadius: '30px',
+                    width: { xs: 250, md: 150 },
+                    height: { md: 30, xs: 50, },
+                  }} />
+              </Stack>
+              <Stack sx={{ flexDirection: 'column', mt: 5, ml: 5, justifyContent: 'center', alignItems: 'center', gap: 1, border: '2px solid rgb(195 188 182)', borderRadius: '30px', p: 1 }}>
+
+                <Skeleton variant="rectangular"
+                  sx={{
+                    borderRadius: '30px',
+                    width: { xs: 250, md: 150 },
+                    height: { md: 130, xs: 250, },
+                  }} />
+                <Skeleton variant="rounded"
+                  sx={{
+                    borderRadius: '30px',
+                    width: { xs: 250, md: 150 },
+                    height: { md: 30, xs: 50, },
+                  }} />
+              </Stack>
+              <Stack sx={{ flexDirection: 'column', mt: 5, ml: 5, justifyContent: 'center', alignItems: 'center', gap: 1, border: '2px solid rgb(195 188 182)', borderRadius: '30px', p: 1 }}>
+
+                <Skeleton variant="rectangular"
+                  sx={{
+                    borderRadius: '30px',
+                    width: { xs: 250, md: 150 },
+                    height: { md: 130, xs: 250, },
+                  }} />
+                <Skeleton variant="rounded"
+                  sx={{
+                    borderRadius: '30px',
+                    width: { xs: 250, md: 150 },
+                    height: { md: 30, xs: 50, },
+                  }} />
+              </Stack>
+            </>
+            )
+            }
           </Grid>
         </Stack>
       </Stack>

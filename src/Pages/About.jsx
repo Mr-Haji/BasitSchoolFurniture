@@ -25,6 +25,7 @@ const About = () => {
   return (
     <Stack
       className='body'
+      
     >
       <Stack
         sx={{
